@@ -15,7 +15,7 @@ library(tm)
 #install.packages("textmineR")
 library(textmineR)
 #install.packages("qdap")
-library(qdap)
+#library(qdap)
 
 
 
@@ -65,10 +65,10 @@ getTermMatrix <- memoise(function(state) {
   tweets_text$text <- sub("@.* ", "", tweets_text$text)
   tweets_text$text <- gsub(" ?(f|ht)(tp)(s?)(://t.co)[|/](.*)", "", tweets_text$text)
   
-  tweets_text$text <- tolower(tweets_text$text)
-  tweets_text$text <-replace_abbreviation(tweets_text$text)
+  #tweets_text$text <- tolower(tweets_text$text)
+  #tweets_text$text <-replace_abbreviation(tweets_text$text)
   
-  tweets_text$text <-replace_contraction(tweets_text$text)
+  #tweets_text$text <-replace_contraction(tweets_text$text)
   
   text_cleaning_tokens <- tweets_text %>% 
     tidytext::unnest_tokens(word, text)
